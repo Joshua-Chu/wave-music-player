@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faPlay,
@@ -19,7 +19,6 @@ const Player = ({
 		currentTime: 0,
 		duration: 0,
 	});
-	const [timeValue, setTimeValue] = useState(0);
 	const audioRef = useRef(null);
 
 	const playSongHandler = () => {

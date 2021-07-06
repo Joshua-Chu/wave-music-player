@@ -10,8 +10,8 @@ const Song = (props) => {
 				alt=""
 				className={props.isPlaying ? "isPlaying-animation" : null}
 			/>
-			<h2>Title : {name}</h2>
-			<h3>Created by: {artist}y</h3>
+			<h2>{name}</h2>
+			<h3> {artist}y</h3>
 		</div>
 	);
 };
