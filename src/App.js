@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 //Components
 import Player from "./components/Player";
@@ -7,12 +7,28 @@ import Song from "./components/Song";
 //Style
 import "./styles/app.scss";
 
+//Dummy Data
+import data from "./data";
+
 const App = () => {
+	const [songs, setSongs] = useState(data());
+	const [currentSongIndex, setCurrentSongIndex] = useState(0);
+	const [currentSong, setCurrentSong] = useState(songs[currentSongIndex]);
+	const [isPlaying, setIsPlaying] = useState(false);
+	// console.log(songs);
+	// console.log(currentSong);
 	return (
 		<div className="app">
-			<h1>Music Player Application</h1>
-			<Song />
-			<Player />
+			<Song currentSong={currentSong} isPlaying={isPlaying} />
+			<Player
+				setCurrentSong={setCurrentSong}
+				songs={songs}
+				currentSongIndex={currentSongIndex}
+				setCurrentSongIndex={setCurrentSongIndex}
+				currentSong={currentSong}
+				isPlaying={isPlaying}
+				setIsPlaying={setIsPlaying}
+			/>
 		</div>
 	);
 };

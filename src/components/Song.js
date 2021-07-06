@@ -1,11 +1,17 @@
 import React from "react";
 
-const Song = () => {
+const Song = (props) => {
+	const { cover, name, artist } = props.currentSong;
+
 	return (
 		<div className="song-container">
-			<h1>Picture</h1>
-			<h1>Title</h1>
-			<h1>Created by</h1>
+			<img
+				src={cover}
+				alt=""
+				className={props.isPlaying ? "isPlaying-animation" : null}
+			/>
+			<h2>Title : {name}</h2>
+			<h3>Created by: {artist}y</h3>
 		</div>
 	);
 };
