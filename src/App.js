@@ -17,12 +17,23 @@ const App = () => {
 	const [currentSongIndex, setCurrentSongIndex] = useState(0);
 	const [currentSong, setCurrentSong] = useState(songs[currentSongIndex]);
 	const [isPlaying, setIsPlaying] = useState(false);
-	// console.log(songs);
-	// console.log(currentSong);
+
+	const [isLibraryOpen, setIsLibraryOpen] = useState(false);
+
+	const playControlsColors = {
+		color: `${currentSong.color[1]}`,
+	};
+
+	const trackColor = {
+		background: `linear-gradient(to right, ${currentSong.color[0]}, ${currentSong.color[1]})`,
+	};
+
+	console.log(isPlaying);
 	return (
-		<div className="app">
-			<Nav />
+		<div className={isLibraryOpen ? "App library-active" : "App"}>
+			<Nav isLibraryOpen={isLibraryOpen} setIsLibraryOpen={setIsLibraryOpen} />
 			<Library
+				isLibraryOpen={isLibraryOpen}
 				songs={songs}
 				currentSong={currentSong}
 				setCurrentSong={setCurrentSong}
@@ -39,6 +50,8 @@ const App = () => {
 				currentSong={currentSong}
 				isPlaying={isPlaying}
 				setIsPlaying={setIsPlaying}
+				playControlsColors={playControlsColors}
+				trackColor={trackColor}
 			/>
 		</div>
 	);

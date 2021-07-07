@@ -4,19 +4,19 @@
 	left: 0;
 	width: 20rem;
 	height: 100%;
-	background-color: whie;
+	background-color: white;
 	overflow: scroll;
 	box-shadow: 2px 2px 50px rgb(198, 197, 197);
 	transform: translatex(-100%);
 	transition: all 0.5s ease;
 	opacity: 0;
+	z-index: 101;
 
 	h2 {
 		padding: 2rem;
 	}
 
 	.library-songs {
-		// padding: 1rem 2rem 1rem 2rem;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -24,13 +24,15 @@
 	}
 }
 
+.open {
+	transform: none;
+	opacity: 1;
+}
+
 .librarysong-container {
-	// border: 2px solid red;
 	display: flex;
-	// flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	// margin-bottom: 50px;
 	cursor: pointer;
 	padding: 1rem 2rem;
 	transition: all 500ms ease;
@@ -84,4 +86,10 @@
 	background-color: rgba(155, 155, 155, 0.5);
 	border-radius: 20px;
 	border: transparent;
+}
+
+@media screen and (max-width: 768px) {
+	.library {
+		width: 100%;
+	}
 }

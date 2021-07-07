@@ -7,12 +7,14 @@ const Library = ({
 	setCurrentSongIndex,
 	currentSongIndex,
 	currentSong,
+	isLibraryOpen,
 }) => {
 	const setSongHandler = (song) => {
 		setCurrentSongIndex(songs.indexOf(song));
 	};
+
 	return (
-		<div className="library">
+		<div className={isLibraryOpen ? "library open" : "library"}>
 			<h2>Library</h2>
 			<div className="library-songs">
 				{songs.map((song) => (
